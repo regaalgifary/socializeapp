@@ -1,0 +1,104 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Main container */
+.container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* Logo */
+.logo {
+    font-size: 32px;
+    color: #2d3eec;
+    margin-bottom: 10px;
+}
+
+/* Chat icon */
+.chat-icon {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Heading */
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+.container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Create account button */
+.create-account-btn {
+    background-color: #2d3eec;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.create-account-btn:hover {
+    background-color: #1a29b6;
+}
+
+/* Sign in text */
+.signin-text {
+    font-size: 14px;
+}
+
+.signin-text a {
+    color: #2d3eec;
+    text-decoration: none;
+}
+
+.signin-text a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-links span {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+}
