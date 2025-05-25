@@ -30,12 +30,26 @@
 
             <a href="forgot.html" class="forgot-password">Forgot Password?</a>
 
-            <button class="signin-btn">Sign In</button>
+            <button class="signin-btn" id="signinBtn">Sign In</button>
 
             <p class="switch-auth">Already have an Account? <a href="signup.html">Sign Up</a></p>
         </div>
     </div>
 
-    
+    <!-- Tambahkan JavaScript untuk pindah halaman -->
+    <script>
+        document.getElementById("signinBtn").addEventListener("click", function() {
+            // Validasi sederhana (optional)
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (email && password) {
+                // Pindah ke halaman.html
+                window.location.href = "halaman.html";
+            } else {
+                alert("Please fill in both email and password.");
+            }
+        });
+    </script>
 </body>
 </html>
