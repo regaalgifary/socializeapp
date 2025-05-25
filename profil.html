@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socialize - Profile</title>
+    <link rel="stylesheet" href="profil.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">Socialize</div>
+            
+            <input type="text" class="search-box" placeholder="Search">
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="halaman.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notification.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        Notifications
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="messages.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Messages
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profil.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.9 1 3 1.9 3 3V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V9Z"/>
+                        </svg>
+                        Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="groups.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.98 2.98 0 0 0 17.13 6H16c-.8 0-1.54.37-2.01.99l-2.54 3.38c-.22.29-.35.65-.35 1.03V20h2zm-7.5-10.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 6.17 11 7s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2.5 6h-2L4 20h2l1.5-8z"/>
+                        </svg>
+                        Groups
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="more.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                        More
+                    </a>
+                </li>
+            </ul>            
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="cover-photo"></div>
+                <div class="profile-info">
+                    <div class="profile-avatar"></div>
+                    <h1 class="profile-name">Username</h1>
+                    <p class="profile-handle">@username</p>
+                    <p class="profile-bio">Investigator in Miami City, Cinema Enthusiast</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">132</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">121</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+                    <button class="edit-profile-btn">Edit profile</button>
+                </div>
+            </div>
+
+            <!-- Profile Tabs -->
+            <div class="profile-tabs">
+                <button class="tab active">Posts</button>
+                <button class="tab">Media</button>
+                <button class="tab">Share</button>
+                <button class="tab">Bookmarks</button>
+            </div>
+
+            <!-- Post -->
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar"></div>
+                    <div>
+                        <div class="post-author">Username</div>
+                        <div class="post-handle">@username</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    Friends, memories, and real connections - that's what Socialize is all about! Tag your squad and join the fun! 🔥❤️
+                    <br><br>
+                    <a href="#" class="hashtag">#ShareTheMoment</a>
+                </div>
+                <div class="post-image"></div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <!-- People Suggestions -->
+            <div class="widget">
+                <h3 class="widget-title">Find Your People,<br>Follow Your Interests!</h3>
+                <div class="suggest-item">
+                    <div class="suggest-info">
+                        <div class="suggest-avatar"></div>
+                        <div>
+                            <div class="suggest-name">username</div>
+                            <div class="suggest-handle">@username</div>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="suggest-item">
+                    <div class="suggest-info">
+                        <div class="suggest-avatar"></div>
+                        <div>
+                            <div class="suggest-name">username</div>
+                            <div class="suggest-handle">@username</div>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="suggest-item">
+                    <div class="suggest-info">
+                        <div class="suggest-avatar"></div>
+                        <div>
+                            <div class="suggest-name">username</div>
+                            <div class="suggest-handle">@username</div>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <a href="#" class="show-more">Show more</a>
+            </div>
+
+            <!-- Trending -->
+            <div class="widget">
+                <h3 class="widget-title">Trending Now!</h3>
+                <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Discover the Hottest Hashtags 🔥</p>
+                <div style="margin-bottom: 15px;">
+                    <div style="font-weight: 600; margin-bottom: 5px;">Most trending</div>
+                    <div style="color: #666; font-size: 12px;">SocializeNow 14.2K posts</div>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-topic">#GoViral</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-topic">#MemeOfTheDay</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-topic">#KeepGoing</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-topic">#WatchThis</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-topic">#PhotosOfTheDay</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-topic">#RoastMe</a>
+                </div>
+            </div>
+
+            <!-- Groups -->
+            <div class="widget">
+                <h3 class="widget-title">Join, Share, and Grow Together!</h3>
+                <div class="suggest-item">
+                    <div class="suggest-info">
+                        <div class="suggest-avatar" style="border-radius: 8px;"></div>
+                        <div>
+                            <div class="suggest-name">Best Cooking Recipes</div>
+                            <div class="suggest-handle">8.6K members</div>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
