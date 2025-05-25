@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <img src="gambar/sosial.jpg.png" alt="Chat Icon" class="logo">
+            <button class="close-btn">&times;</button>
+            <h2>Sign Up</h2>
+            <p>Enter your name, email, and password and start creating.</p>
+
+            <form id="signupForm">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder=" " required>
+                    <label for="password">Password</label>
+                    <span class="eye-icon">👁️</span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirm-password" placeholder=" " required>
+                    <label for="confirm-password">Confirm Password</label>
+                    <span class="eye-icon">👁️</span>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+
+            <p class="or-text">Or continue</p>
+            <button class="google-btn">
+                <img src="gambar/google.png" alt="Google"> Continue with Google
+            </button>
+
+            <p class="switch-auth">Already have an Account? <a href="signin.html">Sign In</a></p>
+        </div>
+    </div>
+
+    <!-- Tambahkan JavaScript untuk menangani submit -->
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Mencegah form reload halaman
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const confirmPassword = document.getElementById("confirm-password").value.trim();
+
+            // Validasi sederhana
+            if (!name || !email || !password || !confirmPassword) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // Jika semua valid, redirect ke halaman.html
+            window.location.href = "halaman.html";
+        });
+    </script>
+</body>
+</html>
