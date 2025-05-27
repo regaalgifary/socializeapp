@@ -5,229 +5,351 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socialize</title>
     <link rel="stylesheet" href="halaman.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Left Sidebar -->
-    <div class="sidebar">
-        <h1>Socialize</h1>
-        
-        <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search">
-        </div>
-        
-        <a href="#" class="nav-item">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
-        
-        <a href="notification.html" class="nav-item">
-            <i class="fas fa-bell"></i>
-            <span>Notifications</span>
-        </a>
-        
-        <a href="pesan.html" class="nav-item">
-            <i class="fas fa-envelope"></i>
-            <span>Messages</span>
-        </a>
-        
-        <a href="profil.html" class="nav-item">
-            <i class="fas fa-user"></i>
-            <span>Profile</span>
-        </a>
-        
-        <a href="grup.html" class="nav-item">
-            <i class="fas fa-users"></i>
-            <span>Groups</span>
-        </a>
-        
-        <a href="" class="nav-item">
-            <i class="fas fa-ellipsis-h"></i>
-            <span>More</span>
-        </a>
-    </div>
-    
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="logo-container">
-            <img src="gambar/sosial.jpg.png" alt="Socialize Logo" class="logo">
-        </div>
-        
-        <!-- Create Post -->
-        <div class="create-post">
-            <div class="post-input-container">
-                <img src="placeholder-avatar.png" alt="User Avatar" class="user-avatar">
-                <input type="text" placeholder="What's on your mind?" class="post-input">
-                <button class="post-button">Post</button>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <div class="logo">Socialize</div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Search">
             </div>
-            <div class="post-options">
-                <div class="post-option">
-                    <i class="fas fa-image"></i>
-                    <span>Media</span>
-                </div>
-                <div class="post-option">
-                    <i class="fas fa-image"></i>
-                    <span>GIF</span>
-                </div>
-                <div class="post-option">
-                    <i class="far fa-smile"></i>
-                    <span>Emoji</span>
-                </div>
-            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="halaman.html" class="nav-link active">
+                        <span class="nav-icon">🏠</span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notification.html" class="nav-link">
+                        <span class="nav-icon">🔔</span>
+                        Notifications
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">✉️</span>
+                        Messages
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profil.html" class="nav-link">
+                        <span class="nav-icon">👤</span>
+                        Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        Groups
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⋯</span>
+                        More
+                    </a>
+                </li>
+            </ul>
         </div>
-        
-        <!-- Posts -->
-        <div class="post">
-            <div class="post-header">
-                <div class="post-user">
-                    <img src="placeholder-avatar.png" alt="User Avatar" class="user-avatar">
-                    <div class="post-user-info">
-                        <div class="post-user-name">Username</div>
-                        <div class="post-user-handle">@Username</div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Post Composer -->
+            <div class="post-composer">
+                <div class="composer-header">
+                    <div class="avatar"></div>
+                    <input type="text" class="composer-input" placeholder="What's on your mind?">
+                    <button class="post-btn">Post</button>
+                </div>
+                <div class="composer-actions">
+                    <div class="action-btn">
+                        <span>📷</span>
+                        Media
+                    </div>
+                    <div class="action-btn">
+                        <span>🎬</span>
+                        GIF
+                    </div>
+                    <div class="action-btn">
+                        <span>😊</span>
+                        Emoji
                     </div>
                 </div>
-                <div class="post-actions">
-                    <i class="fas fa-ellipsis-h"></i>
+            </div>
+
+            <!-- Posts -->
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar"></div>
+                    <div class="post-info">
+                        <h3>Michael Bell</h3>
+                        <div class="username">@Michael13</div>
+                    </div>
+                    <div class="post-menu">⋯</div>
+                </div>
+                <div class="post-content">
+                    <div class="post-text">
+                        Share your best moments and see who relates! 🔥🤍
+                        <br><br>
+                        <span class="hashtag">#ShareTheMoment</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=300&fit=crop" alt="Mountain landscape" class="post-image">
+                </div>
+                <div class="post-stats">
+                    <div class="stat-item">
+                        <span>👍</span>
+                        352
+                    </div>
+                    <div class="stat-item">
+                        <span>💬</span>
+                        115
+                    </div>
+                    <div class="stat-item">
+                        <span>🔄</span>
+                        30
+                    </div>
+                    <div class="stat-item">
+                        <span>📋</span>
+                    </div>
+                    <div class="post-time">2 days ago</div>
                 </div>
             </div>
-            <div class="post-content">
+
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar"></div>
+                    <div class="post-info">
+                        <h3>Dexter Morgan</h3>
+                        <div class="username">@Dexter22</div>
+                    </div>
+                    <div class="post-menu">⋯</div>
+                </div>
+                <div class="post-content">
+                    <div class="post-text">
+                        Friends, memories, and real connections – that's what Socialize is all about! Tag your squad and join the fun! 🔥💫
+                        <br><br>
+                        <span class="hashtag">#ShareTheMoment</span>
+                    </div>
+                </div>
+                <div class="post-stats">
+                    <div class="stat-item">
+                        <span>👍</span>
+                        89
+                    </div>
+                    <div class="stat-item">
+                        <span>💬</span>
+                        23
+                    </div>
+                    <div class="stat-item">
+                        <span>🔄</span>
+                        12
+                    </div>
+                    <div class="stat-item">
+                        <span>📋</span>
+                    </div>
+                    <div class="post-time">1 day ago</div>
+                </div>
+            </div>
+
+            <!-- More posts for scrolling demo -->
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar"></div>
+                    <div class="post-info">
+                        <h3>Sarah Wilson</h3>
+                        <div class="username">@sarah_w</div>
+                    </div>
+                    <div class="post-menu">⋯</div>
+                </div>
+                <div class="post-content">
+                    <div class="post-text">
+                        Amazing sunset from my weekend trip! Nature never fails to amaze me 🌅
+                        <br><br>
+                        <span class="hashtag">#NatureLover #Weekend #Sunset</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=600&h=300&fit=crop" alt="Sunset" class="post-image">
+                </div>
+                <div class="post-stats">
+                    <div class="stat-item">
+                        <span>👍</span>
+                        245
+                    </div>
+                    <div class="stat-item">
+                        <span>💬</span>
+                        67
+                    </div>
+                    <div class="stat-item">
+                        <span>🔄</span>
+                        18
+                    </div>
+                    <div class="stat-item">
+                        <span>📋</span>
+                    </div>
+                    <div class="post-time">3 hours ago</div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar"></div>
+                    <div class="post-info">
+                        <h3>Alex Thompson</h3>
+                        <div class="username">@alex_t</div>
+                    </div>
+                    <div class="post-menu">⋯</div>
+                </div>
+                <div class="post-content">
+                    <div class="post-text">
+                        Just finished reading an amazing book! Can't wait to share my thoughts 📚✨
+                        <br><br>
+                        <span class="hashtag">#BookLover #Reading #Knowledge</span>
+                    </div>
+                </div>
+                <div class="post-stats">
+                    <div class="stat-item">
+                        <span>👍</span>
+                        78
+                    </div>
+                    <div class="stat-item">
+                        <span>💬</span>
+                        34
+                    </div>
+                    <div class="stat-item">
+                        <span>🔄</span>
+                        9
+                    </div>
+                    <div class="stat-item">
+                        <span>📋</span>
+                    </div>
+                    <div class="post-time">5 hours ago</div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar"></div>
+                    <div class="post-info">
+                        <h3>Emma Davis</h3>
+                        <div class="username">@emma_d</div>
+                    </div>
+                    <div class="post-menu">⋯</div>
+                </div>
+                <div class="post-content">
+                    <div class="post-text">
+                        Coffee and code - my perfect morning combination ☕💻
+                        <br><br>
+                        <span class="hashtag">#Developer #Coffee #MorningVibes</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=300&fit=crop" alt="Coffee and laptop" class="post-image">
+                </div>
+                <div class="post-stats">
+                    <div class="stat-item">
+                        <span>👍</span>
+                        156
+                    </div>
+                    <div class="stat-item">
+                        <span>💬</span>
+                        45
+                    </div>
+                    <div class="stat-item">
+                        <span>🔄</span>
+                        22
+                    </div>
+                    <div class="stat-item">
+                        <span>📋</span>
+                    </div>
+                    <div class="post-time">8 hours ago</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <div class="profile-card">
+                <div class="profile-avatar"></div>
+                <div class="profile-name">Dexter Morgan</div>
+                <div class="profile-username">@Dexter22</div>
+            </div>
+
+            <div class="suggestions">
+                <h3 class="section-title">Find Your People,<br>Follow Your Interests!</h3>
                 
-                <br>
-                <span class="hashtag"></span>
-            </div>
-            <img src="mountain-placeholder.jpg" alt="Mountain view" class="post-image">
-            <div class="post-stats">
-                <div class="post-stat">
-                    <i class="far fa-thumbs-up"></i>
-                    <span>352</span>
-                </div>
-                <div class="post-stat">
-                    <i class="far fa-comment"></i>
-                    <span>115</span>
-                </div>
-                <div class="post-stat">
-                    <i class="fas fa-share"></i>
-                    <span>30</span>
-                </div>
-                <div class="post-stat">
-                    <i class="far fa-bookmark"></i>
-                </div>
-            </div>
-            <div class="post-time"></div>
-        </div>
-        
-        <div class="post">
-            <div class="post-header">
-                <div class="post-user">
-                    <img src="placeholder-avatar.png" alt="User Avatar" class="user-avatar">
-                    <div class="post-user-info">
-                        <div class="post-user-name"></div>
-                        <div class="post-user-handle"></div>
+                <div class="suggestion-item">
+                    <div class="suggestion-avatar"></div>
+                    <div class="suggestion-info">
+                        <div class="suggestion-name">Michael Bell</div>
+                        <div class="suggestion-username">@Michael13</div>
                     </div>
+                    <button class="follow-btn">Follow</button>
                 </div>
-                <div class="post-actions">
-                    <i class="fas fa-ellipsis-h"></i>
-                </div>
-            </div>
-            <div class="post-content">
-                
-                <br>
-                <span class="hashtag"></span>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Right Sidebar -->
-    <div class="right-sidebar">
-        <div class="profile-card">
-            <img src="placeholder-avatar.png" alt="User Avatar" class="user-avatar">
-            <div class="profile-info">
-                <div class="profile-name">Username</div>
-                <div class="profile-handle">@Username</div>
-            </div>
-            <div class="post-actions">
-                <i class="fas fa-ellipsis-h"></i>
-            </div>
-        </div>
-        
-        <div class="recommendations">
-            <h3>Find Your People, Follow Your Interests!</h3>
-            
-            <div class="recommendation">
-                <div class="recommendation-user">
-                    <img src="placeholder-avatar.png" alt="User Avatar" class="user-avatar">
-                    <div class="recommendation-info">
-                        <div class="recommendation-name">username</div>
-                        <div class="recommendation-handle">@username</div>
+
+                <div class="suggestion-item">
+                    <div class="suggestion-avatar"></div>
+                    <div class="suggestion-info">
+                        <div class="suggestion-name">John Doe</div>
+                        <div class="suggestion-username">@Johndoe91</div>
                     </div>
+                    <button class="follow-btn">Follow</button>
                 </div>
-                <button class="follow-button">Follow</button>
-            </div>
-            
-            <div class="recommendation">
-                <div class="recommendation-user">
-                    <img src="placeholder-avatar.png" alt="User Avatar" class="user-avatar">
-                    <div class="recommendation-info">
-                        <div class="recommendation-name">username</div>
-                        <div class="recommendation-handle">@username</div>
+
+                <div class="suggestion-item">
+                    <div class="suggestion-avatar"></div>
+                    <div class="suggestion-info">
+                        <div class="suggestion-name">Frank Richard</div>
+                        <div class="suggestion-username">@Franky_</div>
                     </div>
+                    <button class="follow-btn">Follow</button>
                 </div>
-                <button class="follow-button">Follow</button>
+
+                <div class="show-more">Show more</div>
             </div>
-            
-            <div class="recommendation">
-                <div class="recommendation-user">
-                    <img src="placeholder-avatar.png" alt="User Avatar" class="user-avatar">
-                    <div class="recommendation-info">
-                        <div class="recommendation-name">username</div>
-                        <div class="recommendation-handle">@username</div>
-                    </div>
+
+            <div class="trending">
+                <h3 class="section-title">Trending Now! 🔥</h3>
+                <div style="color: #65676b; font-size: 13px; margin-bottom: 15px;">Discover the Hottest Hashtags</div>
+
+                <div class="trending-item">
+                    <div class="trending-category">Most trending</div>
+                    <div class="trending-hashtag">#GoViral</div>
                 </div>
-                <button class="follow-button">Follow</button>
+
+                <div class="trending-item">
+                    <div class="trending-hashtag">#MemeOfTheDay</div>
+                </div>
+
+                <div class="trending-item">
+                    <div class="trending-hashtag">#KeepGoing</div>
+                </div>
+
+                <div class="trending-item">
+                    <div class="trending-hashtag">#WatchThis</div>
+                </div>
+
+                <div class="trending-item">
+                    <div class="trending-hashtag">#PhotosOfTheDay</div>
+                </div>
+
+                <div class="trending-item">
+                    <div class="trending-hashtag">#RoastMe</div>
+                </div>
             </div>
-            
-            <div class="show-more">Show more</div>
-        </div>
-        
-        <div class="trending">
-            <h3>Trending Now! 🔥</h3>
-            <div class="trending-description">Discover the Hottest Hashtags</div>
-            
-            <div class="trending-item">
-                <div class="trending-count">Most trending</div>
-                <div class="trending-tag">SocializeNow</div>
-                <div class="trending-count">14.2K posts</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#GoViral</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#MemeOfTheDay</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#KeepGoing</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#WatchThis</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#PhotosOfTheDay</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#RoastMe</div>
+
+            <div style="margin-top: 30px;">
+                <h3 class="section-title">Join, Share, and Grow</h3>
+                <p style="color: #65676b; font-size: 14px; line-height: 1.4;">
+                    Connect with people who share your interests and discover new communities every day.
+                </p>
             </div>
         </div>
-    </div>
-    
-    <div class="icon-button">
-        <i class="fas fa-pen"></i>
+
+        <!-- Floating Compose Button -->
+        <div class="compose-floating">
+            ✏️
+        </div>
     </div>
 </body>
 </html>
