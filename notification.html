@@ -3,198 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socialize - Notifications</title>
+    <title>Socialize</title>
     <link rel="stylesheet" href="notifications.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Left Sidebar -->
-    <div class="sidebar">
-        <h1>Socialize</h1>
-        
-        <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search">
-        </div>
-        
-        <a href="halaman.html" class="nav-item">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
-        
-        <a href="notification.html" class="nav-item active">
-            <i class="fas fa-bell"></i>
-            <span>Notifications</span>
-        </a>
-        
-        <a href="pesan.html" class="nav-item">
-            <i class="fas fa-envelope"></i>
-            <span>Messages</span>
-        </a>
-        
-        <a href="profil.html" class="nav-item">
-            <i class="fas fa-user"></i>
-            <span>Profile</span>
-        </a>
-        
-        <a href="grup.html" class="nav-item">
-            <i class="fas fa-users"></i>
-            <span>Groups</span>
-        </a>
-        
-        <a href="" class="nav-item">
-            <i class="fas fa-ellipsis-h"></i>
-            <span>More</span>
-        </a>
-    </div>
-    
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="notifications-header">
-            <div class="back-button">
-                <i class="fas fa-arrow-left"></i>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar left-sidebar">
+            <div class="logo">
+                <h2>Socialize</h2>
             </div>
-            <h2>Notifications</h2>
-            <div class="bell-icon">
-                <i class="fas fa-bell"></i>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
             </div>
+            
+            <nav class="nav-menu">
+                <a href="halaman.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="notification.html" class="nav-item active">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+                <a href="pesan.html" class="nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="profil.html" class="nav-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="grup.html" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Groups</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <span>More</span>
+                </a>
+            </nav>
         </div>
-        
-        <div class="notifications-container">
-            <h3>Recent</h3>
-            <div class="notification-item">
-                <img src="placeholder-avatar.png" alt="Michael Bell" class="user-avatar">
-                <div class="notification-content">
-                    <p>
-                        <span class="user-name"></span>
-                        <span class="notification-text"></span>
-                    </p>
-                    <span class="notification-time"></span>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="header-left">
+                    <i class="fas fa-arrow-left"></i>
+                    <h3>Notifications</h3>
+                </div>
+                <div class="header-right">
+                    <i class="fas fa-bell"></i>
                 </div>
             </div>
 
-            <div class="notification-item">
-                <img src="placeholder-avatar.png" alt="John Doe" class="user-avatar">
-                <div class="notification-content">
-                    <p>
-                        <span class="user-name"></span>
-                        <span class="notification-text"></span>
-                    </p>
-                    <span class="notification-time"></span>
+            <div class="content-scroll">
+                <div class="section">
+                    <h4>Recent</h4>
+                    <div class="notification-item">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Michael Bell">
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Michael Bell</strong> started following you.
+                            </div>
+                            <div class="notification-time">2 days ago</div>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612d4c2?w=40&h=40&fit=crop&crop=face" alt="John Doe">
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>John Doe</strong> liked your post.
+                            </div>
+                            <div class="notification-time">5 days ago</div>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Frank Richard">
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Frank Richard</strong> liked your comment.
+                            </div>
+                            <div class="notification-time">5 days ago</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h4>Earlier</h4>
+                    <div class="notification-item">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612d4c2?w=40&h=40&fit=crop&crop=face" alt="John Doe">
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>John Doe</strong> started following you.
+                            </div>
+                            <div class="notification-time">1 month ago</div>
+                        </div>
+                    </div>
+
+                    <!-- Add more notifications for scrolling -->
+                    <div class="notification-item">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=40&h=40&fit=crop&crop=face" alt="Sarah Wilson">
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Sarah Wilson</strong> commented on your photo.
+                            </div>
+                            <div class="notification-time">2 months ago</div>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop&crop=face" alt="Alex Johnson">
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Alex Johnson</strong> shared your post.
+                            </div>
+                            <div class="notification-time">3 months ago</div>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="Emma Davis">
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Emma Davis</strong> mentioned you in a comment.
+                            </div>
+                            <div class="notification-time">3 months ago</div>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Mike Chen">
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Mike Chen</strong> liked your story.
+                            </div>
+                            <div class="notification-time">4 months ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar right-sidebar">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Dexter Morgan">
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-name">Dexter Morgan</div>
+                        <div class="profile-username">@Dexter22</div>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
                 </div>
             </div>
 
-            <div class="notification-item">
-                <img src="placeholder-avatar.png" alt="Frank Richard" class="user-avatar">
-                <div class="notification-content">
-                    <p>
-                        <span class="user-name"></span>
-                        <span class="notification-text"></span>
-                    </p>
-                    <span class="notification-time"></span>
+            <div class="suggestion-card">
+                <h4>Find Your People, Follow Your Interests!</h4>
+                <div class="suggestions">
+                    <div class="suggestion-item">
+                        <div class="suggestion-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Michael Bell">
+                        </div>
+                        <div class="suggestion-info">
+                            <div class="suggestion-name">Michael Bell</div>
+                            <div class="suggestion-username">@Michael1013</div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+
+                    <div class="suggestion-item">
+                        <div class="suggestion-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612d4c2?w=32&h=32&fit=crop&crop=face" alt="John Doe">
+                        </div>
+                        <div class="suggestion-info">
+                            <div class="suggestion-name">John Doe</div>
+                            <div class="suggestion-username">@Johnboy911</div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+
+                    <div class="suggestion-item">
+                        <div class="suggestion-avatar">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=32&h=32&fit=crop&crop=face" alt="Frank Richard">
+                        </div>
+                        <div class="suggestion-info">
+                            <div class="suggestion-name">Frank Richard</div>
+                            <div class="suggestion-username">@Franky_</div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+                </div>
+                <a href="#" class="show-more">Show more</a>
+            </div>
+
+            <div class="trending-card">
+                <h4>Trending Now! <span class="fire-emoji">🔥</span></h4>
+                <div class="trending-subtitle">Discover the Hottest Hashtags</div>
+                
+                <div class="trending-item">
+                    <div class="trending-info">Most trending</div>
+                    <div class="trending-hashtag">SocializeNow</div>
+                    <div class="trending-posts">14.2K posts</div>
+                </div>
+
+                <div class="hashtag-list">
+                    <div class="hashtag-item">#GoViral</div>
+                    <div class="hashtag-item">#MemeOfTheDay</div>
+                    <div class="hashtag-item">#KeepGoing</div>
+                    <div class="hashtag-item">#WatchThis</div>
+                    <div class="hashtag-item">#PhotosOfTheDay</div>
+                    <div class="hashtag-item">#RoastMe</div>
                 </div>
             </div>
 
-            <h3>Earlier</h3>
-            <div class="notification-item">
-                <img src="placeholder-avatar.png" alt="John Doe" class="user-avatar">
-                <div class="notification-content">
-                    <p>
-                        <span class="user-name"></span>
-                        <span class="notification-text"></span>
-                    </p>
-                    <span class="notification-time"></span>
-                </div>
+            <div class="footer-text">
+                Join, Share, and Grow
             </div>
         </div>
     </div>
-    
-    <!-- Right Sidebar -->
-    <div class="right-sidebar">
-        <div class="profile-card">
-            <img src="placeholder-avatar.png" alt="User Avatar" class="user-avatar">
-            <div class="profile-info">
-                <div class="profile-name"></div>
-                <div class="profile-handle"></div>
-            </div>
-            <div class="more-actions">
-                <i class="fas fa-ellipsis-h"></i>
-            </div>
-        </div>
-        
-        <div class="recommendations">
-            <h3>Find Your People, Follow Your Interests!</h3>
-            
-            <div class="recommendation">
-                <div class="recommendation-user">
-                    <img src="placeholder-avatar.png" alt="Michael Bell" class="user-avatar">
-                    <div class="recommendation-info">
-                        <div class="recommendation-name"></div>
-                        <div class="recommendation-handle"></div>
-                    </div>
-                </div>
-                <button class="follow-button">Follow</button>
-            </div>
-            
-            <div class="recommendation">
-                <div class="recommendation-user">
-                    <img src="placeholder-avatar.png" alt="John Doe" class="user-avatar">
-                    <div class="recommendation-info">
-                        <div class="recommendation-name"></div>
-                        <div class="recommendation-handle"></div>
-                    </div>
-                </div>
-                <button class="follow-button">Follow</button>
-            </div>
-            
-            <div class="recommendation">
-                <div class="recommendation-user">
-                    <img src="placeholder-avatar.png" alt="Frank Richard" class="user-avatar">
-                    <div class="recommendation-info">
-                        <div class="recommendation-name"></div>
-                        <div class="recommendation-handle"></div>
-                    </div>
-                </div>
-                <button class="follow-button">Follow</button>
-            </div>
-            
-            <div class="show-more">Show more</div>
-        </div>
-        
-        <div class="trending">
-            <h3>Trending Now! 🔥</h3>
-            <div class="trending-description">Discover the Hottest Hashtags</div>
-            
-            <div class="trending-item">
-                <div class="trending-count">Most trending</div>
-                <div class="trending-tag">SocializeNow</div>
-                <div class="trending-count">14.2K posts</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#GoViral</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#MemeOfTheDay</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#KeepGoing</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#WatchThis</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#PhotosOfTheDay</div>
-            </div>
-            
-            <div class="trending-item">
-                <div class="trending-tag">#RoastMe</div>
-            </div>
-        </div>
-    </div>
+
+
 </body>
 </html>
