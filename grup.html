@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socialize</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+        .sidebar {
+            background-color: #fff;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .sidebar .nav-link {
+            font-size: 18px;
+            color: #555;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar .nav-link i {
+            margin-right: 15px;
+            font-size: 22px;
+            width: 30px;
+            text-align: center;
+        }
+        .sidebar .nav-link.active {
+            font-weight: bold;
+        }
+        .sidebar .search-bar {
+            margin-bottom: 30px;
+        }
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .group-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+        }
+        .group-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .group-card .group-info h5 {
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #333;
+        }
+        .group-card .group-info p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #777;
+        }
+        .group-card .join-btn {
+            margin-left: auto;
+        }
+        .right-sidebar {
+            background-color: #fff;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            right: 0;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .profile-card .profile-name {
+            font-weight: bold;
+            color: #333;
+        }
+        .profile-card .profile-handle {
+            color: #777;
+            font-size: 14px;
+        }
+        .find-people, .trending-now {
+            margin-bottom: 30px;
+        }
+        .find-people h6, .trending-now h6 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .person-to-follow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .person-to-follow img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+        .person-info {
+            flex-grow: 1;
+        }
+        .person-info .name {
+            font-weight: bold;
+            color: #333;
+        }
+        .person-info .handle {
+            font-size: 13px;
+            color: #777;
+        }
+        .trending-item {
+            margin-bottom: 8px;
+        }
+        .trending-item .trend-title {
+            font-weight: bold;
+            color: #333;
+        }
+        .trending-item .trend-stats {
+            font-size: 13px;
+            color: #777;
+        }
+        .show-more {
+            color: #0d6efd;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <div class="logo">Socialize</div>
+                <div class="search-bar">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="halaman.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notification.html"><i class="fas fa-bell"></i> Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pesan.html"><i class="fas fa-envelope"></i> Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profil.html"><i class="fas fa-user-circle"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="grup.html"><i class="fas fa-users"></i> Groups</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i> More</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 main-content">
+                <div class="d-flex align-items-center mb-4">
+                    <h4 class="mb-0">Groups</h4>
+                    <i class="fas fa-comments fa-2x ms-auto" style="color: #6c757d;"></i>
+                </div>
+
+                <div class="group-card">
+                    <img src="https://via.placeholder.com/60/FFD700/FFFFFF?text=Recipe" alt="Best Cooking Recipes">
+                    <div class="group-info">
+                        <h5>Best Cooking Recipes</h5>
+                        <p>83k members</p>
+                        <p>Love cooking? Join Best Cooking Recipes and explore a world of delicious flavors.</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm join-btn">Join</button>
+                </div>
+
+                <div class="group-card">
+                    <img src="https://via.placeholder.com/60/8A2BE2/FFFFFF?text=Anime" alt="Anime Universe">
+                    <div class="group-info">
+                        <h5>Anime Universe</h5>
+                        <p>12k members</p>
+                        <p>The ultimate group for anime lovers! Join us to discuss your favorite anime, share...</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm join-btn">Join</button>
+                </div>
+
+                <div class="group-card">
+                    <img src="https://via.placeholder.com/60/00CED1/FFFFFF?text=Tech" alt="Tech hub">
+                    <div class="group-info">
+                        <h5>Tech hub</h5>
+                        <p>69k members</p>
+                        <p>Your go-to community for the latest in technology, gadgets, AI, Programming...</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm join-btn">Join</button>
+                </div>
+
+                <div class="group-card">
+                    <img src="https://via.placeholder.com/60/F08080/FFFFFF?text=Cat" alt="Cat Lovers Club">
+                    <div class="group-info">
+                        <h5>Cat Lovers Club</h5>
+                        <p>25k members</p>
+                        <p>The Purr-fect place for all cat enthusiasts! Share adorable cat pictures, funny cat...</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm join-btn">Join</button>
+                </div>
+
+                <div class="group-card">
+                    <img src="https://via.placeholder.com/60/9ACD32/FFFFFF?text=Meme" alt="Random Meme">
+                    <div class="group-info">
+                        <h5>Random Meme</h5>
+                        <p>223k members</p>
+                        <p>The ultimate hangout for meme lovers! Share your funniest memes, discover...</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm join-btn">Join</button>
+                </div>
+            </div>
+
+            <div class="col-md-3 right-sidebar">
+                <div class="profile-card d-flex align-items-center justify-content-between mb-4">
+                    <div class="d-flex align-items-center">
+                        <img src="https://via.placeholder.com/50/6495ED/FFFFFF?text=DM" alt="Dexter Morgan">
+                        <div>
+                            <div class="profile-name">Dexter Morgan</div>
+                            <div class="profile-handle">@Dexter22</div>
+                        </div>
+                    </div>
+                    <i class="fas fa-ellipsis-h text-muted"></i>
+                </div>
+
+                <div class="find-people">
+                    <h6>Find Your People, Follow Your Interests!</h6>
+                    <div class="person-to-follow">
+                        <div class="d-flex align-items-center">
+                            <img src="https://via.placeholder.com/40/FF6347/FFFFFF?text=MB" alt="Michael Bell">
+                            <div class="person-info">
+                                <div class="name">Michael Bell</div>
+                                <div class="handle">@MichaelB3</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Follow</button>
+                    </div>
+                    <div class="person-to-follow">
+                        <div class="d-flex align-items-center">
+                            <img src="https://via.placeholder.com/40/32CD32/FFFFFF?text=JD" alt="John Doe">
+                            <div class="person-info">
+                                <div class="name">John Doe</div>
+                                <div class="handle">@JohnDoe63</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Follow</button>
+                    </div>
+                    <div class="person-to-follow">
+                        <div class="d-flex align-items-center">
+                            <img src="https://via.placeholder.com/40/BA55D3/FFFFFF?text=FR" alt="Frank Richard">
+                            <div class="person-info">
+                                <div class="name">Frank Richard</div>
+                                <div class="handle">@Franky_</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Follow</button>
+                    </div>
+                    <div class="show-more">Show more</div>
+                </div>
+
+                <div class="trending-now">
+                    <h6>Trending Now!</h6>
+                    <p class="text-muted mb-3" style="font-size: 14px;">Discover the Hottest Hashtags 🔥</p>
+                    <div class="trending-item">
+                        <div class="trend-title">#GoViral</div>
+                        <div class="trend-stats">Most trending</div>
+                        <div class="trend-stats">SocializeNow <span class="badge bg-secondary">14.2k posts</span></div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trend-title">#MemeOfTheDay</div>
+                        <div class="trend-stats"></div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trend-title">#KeepGoing</div>
+                        <div class="trend-stats"></div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trend-title">#WatchThis</div>
+                        <div class="trend-stats"></div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trend-title">#PhotosOfTheDay</div>
+                        <div class="trend-stats"></div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trend-title">#RoastMe</div>
+                        <div class="trend-stats"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
