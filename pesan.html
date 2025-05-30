@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socialize - Messages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            overflow: hidden; /* Prevent body scroll, content scrolls within specific divs */
+        }
+        .sidebar, .right-sidebar {
+            background-color: #fff;
+            padding: 20px;
+            height: 100vh; /* Full viewport height */
+            position: fixed; /* Keep fixed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* Allow sidebar content to scroll if it exceeds height */
+            top: 0;
+        }
+        .sidebar {
+            width: 250px;
+            left: 0;
+        }
+        .right-sidebar {
+            width: 300px;
+            right: 0;
+            /* Untuk tampilan empty state, kita akan menggunakan flexbox untuk centering */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .sidebar .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .sidebar .nav-link {
+            font-size: 18px;
+            color: #555;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar .nav-link i {
+            margin-right: 15px;
+            font-size: 22px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .sidebar .search-bar {
+            margin-bottom: 30px;
+            padding: 0 15px; 
+        }
+        .sidebar .search-bar .form-control {
+            border-radius: 20px;
+            padding-left: 40px; 
+        }
+        .sidebar .search-bar .input-group-text {
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            color: #6c757d;
+        }
+
+
+        /* Main Content Wrapper (Scrollable) */
+        .main-content-wrapper {
+            margin-left: 250px; /* Width of left sidebar */
+            margin-right: 10px; /* Width of right sidebar */
+            padding: 20px;
+            height: 100vh; 
+            overflow-y: auto; 
+            background-color: #f8f9fa; 
+        }
+
+        .main-content-wrapper .search-bar {
+            margin-bottom: 25px; 
+        }
+        .main-content-wrapper .search-bar .input-group {
+            position: relative;
+        }
+        .main-content-wrapper .search-bar .form-control {
+            border-radius: 20px; 
+            padding: 8px 15px 8px 40px; 
+            font-size: 1rem;
+            border-color: #e0e0e0; 
+            background-color: #e9ecef; 
+        }
+        .main-content-wrapper .search-bar .form-control:focus {
+            box-shadow: none; 
+            border-color: #0d6efd; 
+        }
+        .main-content-wrapper .search-bar .input-group-text {
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            left: 15px; /* Adjust icon position */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            color: #6c757d; /* Grey color for the icon */
+            padding: 0;
+        }
+
+        /* Message list item adjustments to be shorter and match screenshot */
+        .message-list-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 12px 20px; /* Reduced vertical padding further */
+            margin-bottom: 12px; /* Reduced margin between items */
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .message-list-item:hover {
+            background-color: #f0f2f5;
+        }
+        .message-list-item img {
+            width: 50px; /* Consistent image size */
+            height: 50px; /* Consistent image size */
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .message-list-item .message-info {
+            flex-grow: 1;
+        }
+        .message-list-item .message-info h5 {
+            margin-bottom: 2px;
+            font-size: 16px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .message-list-item .message-info h5 span.username {
+            font-weight: bold;
+        }
+        .message-list-item .message-info h5 span.handle-date {
+            font-size: 13px;
+            color: #777;
+            font-weight: normal;
+        }
+        .message-list-item .message-info p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 13px;
+            color: #777;
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            max-width: calc(100% - 10px);
+        }
+
+        .messages-empty-state {
+            padding: 20px;
+            max-width: 250px; 
+        }
+        .messages-empty-state .icon {
+            font-size: 4rem; /* Larger icon */
+            color: #0d6efd; /* Bootstrap primary blue */
+            margin-bottom: 20px;
+        }
+        .messages-empty-state h5 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .messages-empty-state p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .messages-empty-state .btn {
+            padding: 10px 25px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar">
+                <div class="logo">Socialize</div>
+                <div class="search-bar">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                    </div>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="halaman.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notification.html"><i class="fas fa-bell"></i> Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="pesan.html"><i class="fas fa-envelope"></i> Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profil.html"><i class="fas fa-user-circle"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="grup.html"><i class="fas fa-users"></i> Groups</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i> More</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="main-content-wrapper">
+                <div class="d-flex align-items-center mb-4">
+                    <h4 class="mb-0">Messages</h4>
+                    <div class="d-flex align-items-center gap-3 ms-auto">
+                        <i class="fas fa-comments fa-2x" style="color: #6c757d;"></i>
+                        <i class="fas fa-cog fa-2x" style="color: #6c757d;"></i>
+                    </div>
+                </div>
+
+                <div class="search-bar"> <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search message" aria-label="Search message">
+                    </div>
+                </div>
+
+                <div class="message-list-item mt-4"> <img src="https://via.placeholder.com/60/FF6347/FFFFFF?text=JD" alt="John Doe">
+                    <div class="message-info">
+                        <h5>
+                            <span class="username">John Doe</span>
+                            <span class="handle-date">@Johndoe511 · 2 days ago</span>
+                        </h5>
+                        <p>Thanks man.</p>
+                    </div>
+                </div>
+
+                <div class="message-list-item">
+                    <img src="https://via.placeholder.com/60/32CD32/FFFFFF?text=FR" alt="Frank Richard">
+                    <div class="message-info">
+                        <h5>
+                            <span class="username">Frank Richard</span>
+                            <span class="handle-date">@frankyy_ · 4 days ago</span>
+                        </h5>
+                        <p>You Ok</p>
+                    </div>
+                </div>
+
+                <div class="message-list-item">
+                    <img src="https://via.placeholder.com/60/BA55D3/FFFFFF?text=MB" alt="Michael Bell">
+                    <div class="message-info">
+                        <h5>
+                            <span class="username">Michael Bell</span>
+                            <span class="handle-date">@MichaelB13 · 2 days ago</span>
+                        </h5>
+                        <p>Hello bro.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right-sidebar">
+                <div class="messages-empty-state">
+                    <i class="fas fa-comments icon"></i>
+                    <h5>Messages</h5>
+                    <p>View existing conversations, start a new one, or just relax and enjoy your day.</p>
+                    <button class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
