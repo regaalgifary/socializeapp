@@ -1,251 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socialize</title>
-    <link rel="stylesheet" href="notifications.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notifications - Socialize</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        @media (min-width: 768px) {
+            .sidebar-left {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                overflow-y: auto;
+                width: 270px;
+                z-index: 1050;
+            }
+
+            .content-main {
+                margin-left: 270px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .sidebar-right {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                overflow-y: auto;
+                width: 300px;
+            }
+
+            .content-main {
+                margin-right: 300px;
+            }
+        }
+
+        .content-main {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Left Sidebar -->
-        <div class="sidebar left-sidebar">
-            <div class="logo">
-                <h2>Socialize</h2>
+
+<body class="bg-light">
+    <div class="d-flex">
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSidebar"
+            aria-labelledby="offcanvasSidebarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-primary">Socialize</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
             </div>
-            
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search">
+            <div class="offcanvas-body p-0">
+                <aside class="bg-white border-end p-3" style="width: 270px; height: 100%;">
+                    <div class="mb-4 position-relative">
+                        <form action="search_user.html" method="GET" class="position-relative mb-4">
+                            <input type="text" name="q" class="form-control ps-5 rounded-pill"
+                                placeholder="Search users..." required />
+                            <i
+                                class="fa fa-search position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
+                        </form>
+                    </div>
+                    <nav class="nav flex-column">
+                        <a href="halaman.html" class="nav-link text-dark mb-2"><i
+                                class="fa fa-home me-2 text-primary"></i>Home</a>
+                        <a href="profil.html" class="nav-link text-dark mb-2"><i
+                                class="fa fa-user me-2 text-primary"></i>Profile</a>
+                        <a href="notification.html" class="nav-link text-dark mb-2"><i
+                                class="fa fa-bell me-2 text-primary"></i>Notifications</a>
+                        <a href="pesan.html" class="nav-link text-dark mb-2"><i
+                                class="fa fa-envelope me-2 text-primary"></i>Messages</a>
+                        <a href="logout.html" class="nav-link text-danger mt-4"><i
+                                class="fa fa-sign-out-alt me-2"></i>Logout</a>
+                    </nav>
+                </aside>
             </div>
-            
-            <nav class="nav-menu">
-                <a href="halaman.html" class="nav-item">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-                <a href="notification.html" class="nav-item active">
-                    <i class="fas fa-bell"></i>
-                    <span>Notifications</span>
-                </a>
-                <a href="pesan.html" class="nav-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Messages</span>
-                </a>
-                <a href="profil.html" class="nav-item">
-                    <i class="fas fa-user"></i>
-                    <span>Profile</span>
-                </a>
-                <a href="grup.html" class="nav-item">
-                    <i class="fas fa-users"></i>
-                    <span>Groups</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-ellipsis-h"></i>
-                    <span>More</span>
-                </a>
+        </div>
+
+        <aside class="bg-white border-end p-3 d-none d-md-block sidebar-left">
+            <h1 class="text-primary fs-4 mb-4">Socialize</h1>
+            <div class="mb-4 position-relative">
+                <form action="search_user.html" method="GET" class="position-relative mb-4">
+                    <input type="text" name="q" class="form-control ps-5 rounded-pill" placeholder="Search users..."
+                        required />
+                    <i class="fa fa-search position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
+                </form>
+            </div>
+            <nav class="nav flex-column">
+                <a href="halaman.html" class="nav-link text-dark mb-2"><i
+                        class="fa fa-home me-2 text-primary"></i>Home</a>
+                <a href="profil.html" class="nav-link text-dark mb-2"><i
+                        class="fa fa-user me-2 text-primary"></i>Profile</a>
+                <a href="notification.html" class="nav-link text-dark mb-2"><i
+                        class="fa fa-bell me-2 text-primary"></i>Notifications</a>
+                <a href="pesan.html" class="nav-link text-dark mb-2"><i
+                        class="fa fa-envelope me-2 text-primary"></i>Messages</a>
+                <a href="logout.html" class="nav-link text-danger mt-4"><i
+                        class="fa fa-sign-out-alt me-2"></i>Logout</a>
             </nav>
-        </div>
+        </aside>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="header">
-                <div class="header-left">
-                    <i class="fas fa-arrow-left"></i>
-                    <h3>Notifications</h3>
-                </div>
-                <div class="header-right">
-                    <i class="fas fa-bell"></i>
-                </div>
+        <main class="flex-fill content-main">
+            <div class="d-md-none mb-3">
+                <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar">
+                    <i class="fa fa-bars"></i> Menu
+                </button>
             </div>
 
-            <div class="content-scroll">
-                <div class="section">
-                    <h4>Recent</h4>
-                    <div class="notification-item">
-                        <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Michael Bell">
-                        </div>
-                        <div class="notification-content">
-                            <div class="notification-text">
-                                <strong>Michael Bell</strong> started following you.
-                            </div>
-                            <div class="notification-time">2 days ago</div>
-                        </div>
-                    </div>
-
-                    <div class="notification-item">
-                        <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612d4c2?w=40&h=40&fit=crop&crop=face" alt="John Doe">
-                        </div>
-                        <div class="notification-content">
-                            <div class="notification-text">
-                                <strong>John Doe</strong> liked your post.
-                            </div>
-                            <div class="notification-time">5 days ago</div>
-                        </div>
-                    </div>
-
-                    <div class="notification-item">
-                        <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Frank Richard">
-                        </div>
-                        <div class="notification-content">
-                            <div class="notification-text">
-                                <strong>Frank Richard</strong> liked your comment.
-                            </div>
-                            <div class="notification-time">5 days ago</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h4>Earlier</h4>
-                    <div class="notification-item">
-                        <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612d4c2?w=40&h=40&fit=crop&crop=face" alt="John Doe">
-                        </div>
-                        <div class="notification-content">
-                            <div class="notification-text">
-                                <strong>John Doe</strong> started following you.
-                            </div>
-                            <div class="notification-time">1 month ago</div>
-                        </div>
-                    </div>
-
-                    <!-- Add more notifications for scrolling -->
-                    <div class="notification-item">
-                        <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=40&h=40&fit=crop&crop=face" alt="Sarah Wilson">
-                        </div>
-                        <div class="notification-content">
-                            <div class="notification-text">
-                                <strong>Sarah Wilson</strong> commented on your photo.
-                            </div>
-                            <div class="notification-time">2 months ago</div>
-                        </div>
-                    </div>
-
-                    <div class="notification-item">
-                        <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop&crop=face" alt="Alex Johnson">
-                        </div>
-                        <div class="notification-content">
-                            <div class="notification-text">
-                                <strong>Alex Johnson</strong> shared your post.
-                            </div>
-                            <div class="notification-time">3 months ago</div>
-                        </div>
-                    </div>
-
-                    <div class="notification-item">
-                        <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="Emma Davis">
-                        </div>
-                        <div class="notification-content">
-                            <div class="notification-text">
-                                <strong>Emma Davis</strong> mentioned you in a comment.
-                            </div>
-                            <div class="notification-time">3 months ago</div>
-                        </div>
-                    </div>
-
-                    <div class="notification-item">
-                        <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Mike Chen">
-                        </div>
-                        <div class="notification-content">
-                            <div class="notification-text">
-                                <strong>Mike Chen</strong> liked your story.
-                            </div>
-                            <div class="notification-time">4 months ago</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Sidebar -->
-        <div class="sidebar right-sidebar">
-            <div class="profile-card">
-                <div class="profile-header">
-                    <div class="profile-avatar">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Dexter Morgan">
-                    </div>
-                    <div class="profile-info">
-                        <div class="profile-name">Dexter Morgan</div>
-                        <div class="profile-username">@Dexter22</div>
-                    </div>
-                    <i class="fas fa-ellipsis-h"></i>
-                </div>
+            <div class="text-center mb-3">
+                <img src="gambar/sosial.png" alt="Socialize Logo" class="img-fluid"
+                    style="width: 50px; height: 50px;" />
             </div>
 
-            <div class="suggestion-card">
-                <h4>Find Your People, Follow Your Interests!</h4>
-                <div class="suggestions">
-                    <div class="suggestion-item">
-                        <div class="suggestion-avatar">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Michael Bell">
-                        </div>
-                        <div class="suggestion-info">
-                            <div class="suggestion-name">Michael Bell</div>
-                            <div class="suggestion-username">@Michael1013</div>
-                        </div>
-                        <button class="follow-btn">Follow</button>
-                    </div>
+            <h1 class="mb-3">Notifications</h1>
 
-                    <div class="suggestion-item">
-                        <div class="suggestion-avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612d4c2?w=32&h=32&fit=crop&crop=face" alt="John Doe">
-                        </div>
-                        <div class="suggestion-info">
-                            <div class="suggestion-name">John Doe</div>
-                            <div class="suggestion-username">@Johnboy911</div>
-                        </div>
-                        <button class="follow-btn">Follow</button>
-                    </div>
-
-                    <div class="suggestion-item">
-                        <div class="suggestion-avatar">
-                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=32&h=32&fit=crop&crop=face" alt="Frank Richard">
-                        </div>
-                        <div class="suggestion-info">
-                            <div class="suggestion-name">Frank Richard</div>
-                            <div class="suggestion-username">@Franky_</div>
-                        </div>
-                        <button class="follow-btn">Follow</button>
-                    </div>
-                </div>
-                <a href="#" class="show-more">Show more</a>
+            <div class="bg-white rounded shadow-sm p-3 mb-3">
+                <p class="mb-1">Arif liked your post.</p>
+                <small class="text-muted">2 minutes ago</small>
             </div>
+            <div class="bg-white rounded shadow-sm p-3 mb-3">
+                <p class="mb-1">You have a new follower: Bob.</p>
+                <small class="text-muted">10 minutes ago</small>
+            </div>
+            <div class="bg-white rounded shadow-sm p-3 mb-3">
+                <p class="mb-1">Charlie mentioned you in a comment.</p>
+                <small class="text-muted">1 hour ago</small>
+            </div>
+        </main>
 
-            <div class="trending-card">
-                <h4>Trending Now! <span class="fire-emoji">🔥</span></h4>
-                <div class="trending-subtitle">Discover the Hottest Hashtags</div>
-                
-                <div class="trending-item">
-                    <div class="trending-info">Most trending</div>
-                    <div class="trending-hashtag">SocializeNow</div>
-                    <div class="trending-posts">14.2K posts</div>
-                </div>
-
-                <div class="hashtag-list">
-                    <div class="hashtag-item">#GoViral</div>
-                    <div class="hashtag-item">#MemeOfTheDay</div>
-                    <div class="hashtag-item">#KeepGoing</div>
-                    <div class="hashtag-item">#WatchThis</div>
-                    <div class="hashtag-item">#PhotosOfTheDay</div>
-                    <div class="hashtag-item">#RoastMe</div>
+        <aside class="bg-white border-start p-3 d-none d-xl-block sidebar-right">
+            <div class="d-flex align-items-center mb-3 border-bottom pb-3">
+                <img src="gambar/profile_pic.jpg" alt="User Avatar" class="rounded-circle me-2" width="40"
+                    height="40" />
+                <div>
+                    <div class="fw-semibold">John Doe</div>
+                    <div class="text-muted small">@johndoe</div>
                 </div>
             </div>
-
-            <div class="footer-text">
-                Join, Share, and Grow
-            </div>
-        </div>
+            <h6>About</h6>
+            <p class="small text-muted">A short description about John Doe.</p>
+            <hr />
+            <h6>Followers you know</h6>
+            <ul class="list-unstyled small">
+                <li><a href="#">Alice</a></li>
+                <li><a href="#">Bob</a></li>
+                <li><a href="#">Charlie</a></li>
+            </ul>
+        </aside>
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
