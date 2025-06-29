@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Socialize</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        @media (min-width: 768px) {
+            .sidebar-left {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                overflow-y: auto;
+            }
+
+            .content-main {
+                margin-left: 270px;
+
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .sidebar-right {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                overflow-y: auto;
+            }
+
+            .content-main {
+                margin-right: 300px;
+            }
+        }
+
+        .content-main {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content-main {
+            max-width: calc(100% - 570px);
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="d-flex">
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSidebar"
+            aria-labelledby="offcanvasSidebarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-primary" id="offcanvasSidebarLabel">Socialize</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+                <aside class="bg-white border-end p-3" style="width: 270px; height: 100%;">
+                    <div class="mb-4 position-relative">
+                        <form action="search_user.php" method="GET" class="position-relative mb-4">
+                            <input type="text" name="q" class="form-control ps-5 rounded-pill"
+                                placeholder="Search users..." required />
+                            <i
+                                class="fa fa-search position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
+                        </form>
+                        <i
+                            class="fa fa-search position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
+                    </div>
+                    <nav class="nav flex-column">
+                        <a href="halaman.html" class="nav-link text-dark d-flex align-items-center mb-2"><i
+                                class="fa fa-home me-2 text-primary"></i><span>Home</span></a>
+                        <a href="profil.html" class="nav-link text-dark d-flex align-items-center mb-2"><i
+                                class="fa fa-user me-2 text-primary"></i><span>Profile</span></a>
+                        <a href="notification.html" class="nav-link text-dark d-flex align-items-center mb-2"><i
+                                class="fa fa-bell me-2 text-primary"></i><span>Notifications</span></a>
+                        <a href="pesan.html" class="nav-link text-dark d-flex align-items-center mb-2"><i
+                                class="fa fa-envelope me-2 text-primary"></i><span>Messages</span></a>
+                        <a href="?logout=1" class="nav-link text-danger d-flex align-items-center mt-4"><i
+                                class="fa fa-sign-out-alt me-2"></i><span>Logout</span></a>
+                    </nav>
+                </aside>
+            </div>
+        </div>
+
+        <aside class="bg-white border-end p-3 d-none d-md-block sidebar-left" style="width: 270px">
+            <h1 class="text-primary fs-4 mb-4">Socialize</h1>
+            <div class="mb-4 position-relative">
+                <form action="search_user.php" method="GET" class="position-relative mb-4">
+                    <input type="text" name="q" class="form-control ps-5 rounded-pill" placeholder="Search users..."
+                        required />
+                    <i class="fa fa-search position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
+                </form>
+                <i class="fa fa-search position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
+            </div>
+            <nav class="nav flex-column">
+                <a href="halaman.html" class="nav-link text-dark d-flex align-items-center mb-2"><i
+                        class="fa fa-home me-2 text-primary"></i><span>Home</span></a>
+                <a href="profil.html" class="nav-link text-dark d-flex align-items-center mb-2"><i
+                        class="fa fa-user me-2 text-primary"></i><span>Profile</span></a>
+                <a href="notification.html" class="nav-link text-dark d-flex align-items-center mb-2"><i
+                        class="fa fa-bell me-2 text-primary"></i><span>Notifications</span></a>
+                <a href="pesan.html" class="nav-link text-dark d-flex align-items-center mb-2"><i
+                        class="fa fa-envelope me-2 text-primary"></i><span>Messages</span></a>
+                <a href="?logout=1" class="nav-link text-danger d-flex align-items-center mt-4"><i
+                        class="fa fa-sign-out-alt me-2"></i><span>Logout</span></a>
+            </nav>
+        </aside>
+
+        <main class="flex-fill p-3 content-main" style="max-width: 700px">
+            <div class="d-md-none mb-3">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasSidebar">
+                    <i class="fa fa-bars"></i> Menu
+                </button>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="gambar/sosial.png" alt="Socialize Logo" class="img-fluid" style="width: 50px; height: 50px" />
+            </div>
+
+            <h1 class="mb-3">Hello, [User's Name]!</h1>
+            <p>Selamat datang di Socialize, platform sosial media oleh kelompok 5 layanan web.</p>
+
+            <div class="bg-white p-3 rounded shadow-sm mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center">
+                        <img src="gambar/profile_pic.jpg" alt="User Avatar" class="rounded-circle me-2" width="40"
+                            height="40" />
+                        <div>
+                            <div class="fw-semibold">ExampleUser1</div>
+                            <div class="text-muted small">@exampleuser1</div>
+                        </div>
+                    </div>
+                    <div class="text-secondary">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </div>
+                </div>
+                <p>This is an example post content. It could be anything the user types!</p>
+                <img src="https://via.placeholder.com/600x400" class="img-fluid rounded mb-2" alt="Post Image" />
+                <div class="d-flex text-muted small mb-2">
+                    <div class="me-3">
+                        <a href="#" class="like-btn" data-postid="1">
+                            <i class="fa fa-thumbs-up me-1"></i>
+                            <span class="like-count">123</span>
+                        </a>
+                    </div>
+                    <div class="me-3"><i class="fa fa-comment me-1"></i>10</div>
+                    <div><i class="fa fa-share me-1"></i>5</div>
+                </div>
+                <div class="text-muted small">June 22, 2025, 10:00 am</div>
+            </div>
+
+            <div class="bg-white p-3 rounded shadow-sm mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center">
+                        <img src="gambar/profile_pic.jpg" alt="User Avatar" class="rounded-circle me-2" width="40"
+                            height="40" />
+                        <div>
+                            <div class="fw-semibold">AnotherUser</div>
+                            <div class="text-muted small">@anotheruser</div>
+                        </div>
+                    </div>
+                    <div class="text-secondary">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </div>
+                </div>
+                <p>Another great day on Socialize! Enjoying the platform.</p>
+                <div class="d-flex text-muted small mb-2">
+                    <div class="me-3">
+                        <a href="#" class="like-btn" data-postid="2">
+                            <i class="fa fa-thumbs-up me-1 text-primary"></i>
+                            <span class="like-count">50</span>
+                        </a>
+                    </div>
+                    <div class="me-3"><i class="fa fa-comment me-1"></i>5</div>
+                    <div><i class="fa fa-share me-1"></i>2</div>
+                </div>
+                <div class="text-muted small">June 21, 2025, 3:30 pm</div>
+            </div>
+        </main>
+
+        <aside class="bg-white border-start p-3 d-none d-xl-block sidebar-right" style="width: 300px">
+            <div class="d-flex align-items-center mb-3 border-bottom pb-3">
+                <img src="gambar/profile_pic.jpg" alt="User Avatar" class="rounded-circle me-2" width="40"
+                    height="40" />
+                <div>
+                    <div class="fw-semibold">[Logged-in Username]</div>
+                    <div class="text-muted small">@[logged-in username]</div>
+                </div>
+            </div>
+            <h6>About</h6>
+            <p class="small text-muted">This is an example user description. It provides a brief bio.</p>
+            <hr />
+            <h6>Followers you know</h6>
+            <ul class="list-unstyled small">
+                <li><a href="#">Alice</a></li>
+                <li><a href="#">Bob</a></li>
+                <li><a href="#">Charlie</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <button class="btn btn-primary rounded-circle position-fixed"
+        style="width: 45px; height: 45px; bottom: 20px; right: 20px;" data-bs-toggle="modal"
+        data-bs-target="#postModal">
+        <i class="fa fa-plus"></i>
+    </button>
+
+    <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="create_post.php" method="POST" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="postModalLabel">Create Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea name="content" class="form-control mb-3" rows="3" placeholder="What's on your mind?"
+                            required></textarea>
+                        <input type="file" name="image" class="form-control" accept="image/*" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        
+        document.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const postId = this.dataset.postid;
+                fetch('like_post.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'post_id=' + postId
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            const icon = this.querySelector('i.fa-thumbs-up');
+                            const countSpan = this.querySelector('.like-count');
+                            countSpan.textContent = data.like_count;
+                            if (icon.classList.contains('text-primary')) {
+                                icon.classList.remove('text-primary');
+                            } else {
+                                icon.classList.add('text-primary');
+                            }
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    })
+                    .catch(err => alert('Error: ' + err));
+            });
+        });
+    </script>
+
+</body>
+
+</html>
